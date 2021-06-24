@@ -1,17 +1,18 @@
-package com.example.android.layoutplayground
+package com.example.android.layoutplayground.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.android.layoutplayground.databinding.ConstraintActivityBinding
+import com.example.android.layoutplayground.databinding.ConstraintFragmentBinding
+import com.example.android.layoutplayground.getRandomColor
 
-class ConstraintActivity: AppCompatActivity() {
+class ConstraintFragment: AppCompatActivity() {
 
-    private lateinit var binding: ConstraintActivityBinding
+    private lateinit var binding: ConstraintFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ConstraintActivityBinding.inflate(layoutInflater)
+        binding = ConstraintFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.faerbenConstraintButton.setOnClickListener {
@@ -19,7 +20,7 @@ class ConstraintActivity: AppCompatActivity() {
         }
 
         binding.weiterConstraintButton.setOnClickListener {
-            val i = Intent(this, HorizontalActivity::class.java)
+            val i = Intent(this, HorizontalFragment::class.java)
             startActivity(i)
         }
     }

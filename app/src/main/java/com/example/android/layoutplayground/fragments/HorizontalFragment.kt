@@ -1,17 +1,18 @@
-package com.example.android.layoutplayground
+package com.example.android.layoutplayground.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.android.layoutplayground.databinding.HorizontalActivityBinding
+import com.example.android.layoutplayground.databinding.HorizontalFragmentBinding
+import com.example.android.layoutplayground.getRandomColor
 
-class HorizontalActivity: AppCompatActivity() {
+class HorizontalFragment: AppCompatActivity() {
 
-    private lateinit var binding: HorizontalActivityBinding
+    private lateinit var binding: HorizontalFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = HorizontalActivityBinding.inflate(layoutInflater)
+        binding = HorizontalFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.faerbenHorizontalButton.setOnClickListener {
@@ -19,7 +20,7 @@ class HorizontalActivity: AppCompatActivity() {
         }
 
         binding.weiterHorizontalButton.setOnClickListener {
-            val i = Intent(this, VerticalActivity::class.java)
+            val i = Intent(this, VerticalFragment::class.java)
             startActivity(i)
         }
     }
