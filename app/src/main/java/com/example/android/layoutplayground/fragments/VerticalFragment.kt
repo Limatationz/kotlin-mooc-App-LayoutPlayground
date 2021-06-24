@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.android.layoutplayground.databinding.VerticalFragmentBinding
 import com.example.android.layoutplayground.getRandomColor
 
@@ -17,13 +18,17 @@ class VerticalFragment: Fragment() {
         super.onCreate(savedInstanceState)
         binding = VerticalFragmentBinding.inflate(layoutInflater, container, false)
 
+        var color = VerticalFragmentArgs.fromBundle(arguments!!).color
+        if(color != -1)
+            binding.farbflaecheVerticalTextView.setBackgroundResource(color)
+
         binding.faerbenVerticalButton.setOnClickListener {
-            binding.farbflaecheVerticalTextView.setBackgroundResource(getRandomColor())
+            color = getRandomColor()
+            binding.farbflaecheVerticalTextView.setBackgroundResource(color)
         }
 
         binding.weiterVerticalButton.setOnClickListener {
-            //val i = Intent(this, ConstraintFragment::class.java)
-            //startActivity(i)
+            findNavController().navigate(VerticalFragmentDirections.actionVerticalFragmentToConstraintFragment(color))
         }
 
         return binding.root

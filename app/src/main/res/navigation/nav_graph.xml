@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/horizontalFragment">
+
+    <fragment
+        android:id="@+id/constraintFragment"
+        android:name="com.example.android.layoutplayground.fragments.ConstraintFragment"
+        android:label="constraint_fragment"
+        tools:layout="@layout/constraint_fragment" >
+        <action
+            android:id="@+id/action_constraintFragment_to_horizontalFragment"
+            app:destination="@id/horizontalFragment"/>
+        <argument
+            android:name="color"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/horizontalFragment"
+        android:name="com.example.android.layoutplayground.fragments.HorizontalFragment"
+        android:label="horizontal_fragment"
+        tools:layout="@layout/horizontal_fragment" >
+        <action
+            android:id="@+id/action_horizontalFragment_to_verticalFragment"
+            app:destination="@id/verticalFragment" />
+        <argument
+            android:name="color"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/verticalFragment"
+        android:name="com.example.android.layoutplayground.fragments.VerticalFragment"
+        android:label="vertical_fragment"
+        tools:layout="@layout/vertical_fragment" >
+        <action
+            android:id="@+id/action_verticalFragment_to_constraintFragment"
+            app:destination="@id/constraintFragment" />
+        <argument
+            android:name="color"
+            app:argType="integer" />
+    </fragment>
+</navigation>
