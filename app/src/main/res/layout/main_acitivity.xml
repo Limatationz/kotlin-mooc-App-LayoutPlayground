@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".MainAcitivity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:id="@+id/fragmentContainerView"
         android:name="com.example.android.layoutplayground.fragments.HorizontalFragment"
         android:layout_width="match_parent"
