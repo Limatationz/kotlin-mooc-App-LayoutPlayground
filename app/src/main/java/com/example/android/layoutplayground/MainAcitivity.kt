@@ -5,18 +5,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.example.android.layoutplayground.databinding.MainAcitivityBinding
-import com.example.android.layoutplayground.databinding.TitleActivityBinding
-import com.google.android.material.navigation.NavigationView
 
 class MainAcitivity: AppCompatActivity() {
 
