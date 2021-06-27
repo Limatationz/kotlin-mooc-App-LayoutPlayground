@@ -8,20 +8,20 @@
     <fragment
         android:id="@+id/constraintFragment"
         android:name="com.example.android.layoutplayground.fragments.ConstraintFragment"
-        android:label="constraint_fragment"
-        tools:layout="@layout/constraint_fragment" >
+        android:label="Constraint View"
+        tools:layout="@layout/constraint_fragment">
         <action
             android:id="@+id/action_constraintFragment_to_horizontalFragment"
-            app:destination="@id/horizontalFragment"/>
+            app:destination="@id/horizontalFragment" />
         <argument
             android:name="color"
-            app:argType="integer"/>
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/horizontalFragment"
         android:name="com.example.android.layoutplayground.fragments.HorizontalFragment"
-        android:label="horizontal_fragment"
-        tools:layout="@layout/horizontal_fragment" >
+        android:label="Horizontal View"
+        tools:layout="@layout/horizontal_fragment">
         <action
             android:id="@+id/action_horizontalFragment_to_verticalFragment"
             app:destination="@id/verticalFragment" />
@@ -32,8 +32,8 @@
     <fragment
         android:id="@+id/verticalFragment"
         android:name="com.example.android.layoutplayground.fragments.VerticalFragment"
-        android:label="vertical_fragment"
-        tools:layout="@layout/vertical_fragment" >
+        android:label="Vertical View"
+        tools:layout="@layout/vertical_fragment">
         <action
             android:id="@+id/action_verticalFragment_to_constraintFragment"
             app:destination="@id/constraintFragment" />

@@ -18,9 +18,13 @@ class ConstraintFragment: Fragment() {
         super.onCreate(savedInstanceState)
         binding = ConstraintFragmentBinding.inflate(layoutInflater, container, false)
 
-        var color = ConstraintFragmentArgs.fromBundle(arguments!!).color
-        if(color != -1)
-            binding.farbflaecheConstraintTextView.setBackgroundResource(color)
+        var color = -1
+        try {
+            color = ConstraintFragmentArgs.fromBundle(arguments!!).color
+            if (color != -1)
+                binding.farbflaecheConstraintTextView.setBackgroundResource(color)
+        }
+        catch (e: Exception){}
 
         binding.faerbenConstraintButton.setOnClickListener {
             color = getRandomColor()

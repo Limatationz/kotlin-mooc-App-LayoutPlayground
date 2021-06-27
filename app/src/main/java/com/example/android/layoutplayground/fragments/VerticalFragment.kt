@@ -18,9 +18,13 @@ class VerticalFragment: Fragment() {
         super.onCreate(savedInstanceState)
         binding = VerticalFragmentBinding.inflate(layoutInflater, container, false)
 
-        var color = VerticalFragmentArgs.fromBundle(arguments!!).color
-        if(color != -1)
-            binding.farbflaecheVerticalTextView.setBackgroundResource(color)
+        var color = -1
+        try {
+            color = VerticalFragmentArgs.fromBundle(requireArguments()).color
+            if (color != -1)
+                binding.farbflaecheVerticalTextView.setBackgroundResource(color)
+        }
+        catch (e: Exception){}
 
         binding.faerbenVerticalButton.setOnClickListener {
             color = getRandomColor()

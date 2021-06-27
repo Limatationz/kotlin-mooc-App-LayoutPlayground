@@ -4,4 +4,6 @@
     <string name="faerben">Färben</string>
     <string name="start">Starten</string>
     <string name="backToTitle">Zurück zum Start</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>
