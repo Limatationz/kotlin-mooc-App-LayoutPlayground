@@ -6,29 +6,19 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.example.android.layoutplayground.databinding.MainAcitivityBinding
 
 class MainAcitivity: AppCompatActivity() {
-
-    private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = MainAcitivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        drawerLayout = binding.root
         val navController = this.findNavController(R.id.fragmentContainerView)
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
-        NavigationUI.setupWithNavController(binding.navView, navController)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = this.findNavController(R.id.fragmentContainerView)
-        return NavigationUI.navigateUp(navController, drawerLayout)
+        binding.bottomNavigation.setupWithNavController(navController)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
